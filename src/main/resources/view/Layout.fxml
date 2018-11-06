@@ -1,0 +1,182 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import java.lang.*?>
+<?import javafx.scene.control.*?>
+<?import javafx.scene.layout.*?>
+<?import javafx.scene.text.*?>
+
+<AnchorPane id="AnchorPane" maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="577.0" prefWidth="671.0" xmlns:fx="http://javafx.com/fxml/1" xmlns="http://javafx.com/javafx/2.2" fx:controller="TSP.App">
+  <children>
+    <GridPane layoutX="48.0" layoutY="223.0" prefHeight="368.0" prefWidth="623.0">
+      <children>
+        <GridPane gridLinesVisible="false" hgap="10.0" GridPane.columnIndex="0" GridPane.rowIndex="1">
+          <children>
+            <Label text="Размер популяции:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+              <tooltip>
+                <Tooltip maxWidth="300.0" prefWidth="300.0" text="&lt;Натуральное  число&gt;&#10;Этот параметр задаёт количество особей в популяции. Его увеличение  приводит к повышению точности решения и увеличению времени его нахождения." wrapText="true" />
+              </tooltip>
+            </Label>
+            <TextField fx:id="populationSizeField" prefWidth="115.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.0" minWidth="10.0" prefWidth="239.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="102.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="119.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <GridPane gridLinesVisible="false" hgap="10.0" GridPane.columnIndex="0" GridPane.rowIndex="2">
+          <children>
+            <Label text="Количество поколений:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+              <tooltip>
+                <Tooltip maxWidth="300.0" prefWidth="300.0" text="&lt;Натуральное  число&gt; &#10;Этот параметр задаёт количество поколений, то есть итераций выполнения генетического алгоритма. Его увеличение  приводит к повышению точности решения и увеличению времени его нахождения." wrapText="true" />
+              </tooltip>
+            </Label>
+            <TextField fx:id="numberOfGenerationsField" prefWidth="115.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.0" minWidth="10.0" prefWidth="239.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="102.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="119.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <GridPane gridLinesVisible="false" hgap="10.0" GridPane.columnIndex="0" GridPane.rowIndex="3">
+          <children>
+            <Label text="Вероятность мутации:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+              <tooltip>
+                <Tooltip maxWidth="300.0" prefWidth="270.0" text="&lt;Число от 0.0 до 1.0&gt; &#10;Вероятность мутации для каждой особи в популяции." wrapText="true" />
+              </tooltip>
+            </Label>
+            <TextField fx:id="mutationRateField" prefWidth="115.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.0" minWidth="10.0" prefWidth="239.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="102.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="119.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <GridPane gridLinesVisible="false" hgap="10.0" GridPane.columnIndex="0" GridPane.rowIndex="4">
+          <children>
+            <Label  text="Период вымираний:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+              <tooltip>
+                <Tooltip maxWidth="300.0" prefWidth="270.0" text="&lt;Натуральное число&gt; &#10;Число поколений между вымираниями популяции." wrapText="true" />
+              </tooltip>
+            </Label>
+            <TextField fx:id="extinctionPeriodField" prefWidth="115.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.0" minWidth="10.0" prefWidth="239.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="102.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="119.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <GridPane gridLinesVisible="false" hgap="10.0" GridPane.columnIndex="0" GridPane.rowIndex="5">
+          <children>
+            <Label text="Доля выживших:" textAlignment="LEFT" GridPane.columnIndex="0" GridPane.halignment="RIGHT" GridPane.rowIndex="0">
+              <tooltip>
+                <Tooltip maxWidth="300.0" prefWidth="270.0" text="&lt;Число от 0.0 до 1.0&gt; &#10;Доля особей, которые останутся в популяции после вымирания." wrapText="true" />
+              </tooltip>
+            </Label>
+            <TextField fx:id="survivorsFractionField" prefWidth="115.0" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="249.0" minWidth="10.0" prefWidth="239.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="216.0" minWidth="10.0" prefWidth="102.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="152.0" minWidth="10.0" prefWidth="119.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <Label fx:id="shortestPathLengthLabel" text="" GridPane.columnIndex="0" GridPane.rowIndex="7" />
+        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="8">
+          <children>
+            <Button fx:id="showSolutionButton" disable="true" mnemonicParsing="false" onAction="#showSolution" text="Показать порядок вершин" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+            <Button fx:id="showReportButton" disable="true" mnemonicParsing="false" onAction="#showReport" prefWidth="250.0" text="Отчёт о работе алгоритма" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="312.0" minWidth="10.0" prefWidth="257.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="421.0" minWidth="10.0" prefWidth="366.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="6">
+          <children>
+            <Button fx:id="findSolutionButton" disable="true" mnemonicParsing="false" onAction="#findSolution" text="Найти решение" GridPane.columnIndex="0" GridPane.halignment="LEFT" GridPane.rowIndex="0" />
+            <ProgressBar fx:id="progressBar" prefWidth="200.0" progress="0.0" visible="false" GridPane.columnIndex="1" GridPane.rowIndex="0" />
+            <Button fx:id="cancelButton" disable="true" mnemonicParsing="false" onAction="#cancel" text="Отмена" GridPane.columnIndex="2" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="393.0" minWidth="10.0" prefWidth="205.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.0" minWidth="10.0" prefWidth="207.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="411.0" minWidth="10.0" prefWidth="211.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="100.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="38.0" minHeight="10.0" prefHeight="38.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="37.0" minHeight="10.0" prefHeight="37.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+    <Label layoutX="68.0" layoutY="210.0" text="Введите параметры для генетического алгоритма">
+      <font>
+        <Font name="Arial Bold" size="22.0" fx:id="x1" />
+      </font>
+    </Label>
+    <GridPane alignment="CENTER" layoutX="89.0" layoutY="32.0" prefWidth="509.0">
+      <children>
+        <Label alignment="CENTER" font="$x1" prefWidth="495.0" text="Выберите файл с координатами городов" textAlignment="CENTER" GridPane.columnIndex="0" GridPane.rowIndex="0" />
+        <Label fx:id="filePathLabel" text="" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="4" />
+        <GridPane GridPane.columnIndex="0" GridPane.rowIndex="2">
+          <children>
+            <Button contentDisplay="CENTER" mnemonicParsing="false" onAction="#chooseFile" text="Выбрать" textAlignment="CENTER" textOverrun="CLIP" GridPane.columnIndex="0" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+            <Button mnemonicParsing="false" onAction="#showTemplate" prefWidth="321.0" text="Шаблон файла с координатами" GridPane.columnIndex="1" GridPane.halignment="CENTER" GridPane.rowIndex="0" />
+          </children>
+          <columnConstraints>
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="254.0" minWidth="10.0" prefWidth="182.0" />
+            <ColumnConstraints hgrow="SOMETIMES" maxWidth="388.0" minWidth="10.0" prefWidth="327.0" />
+          </columnConstraints>
+          <rowConstraints>
+            <RowConstraints minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+          </rowConstraints>
+        </GridPane>
+      </children>
+      <columnConstraints>
+        <ColumnConstraints hgrow="SOMETIMES" minWidth="10.0" prefWidth="300.0" />
+      </columnConstraints>
+      <rowConstraints>
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+        <RowConstraints maxHeight="30.0" minHeight="10.0" prefHeight="30.0" vgrow="SOMETIMES" />
+      </rowConstraints>
+    </GridPane>
+  </children>
+</AnchorPane>
